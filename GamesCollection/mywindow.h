@@ -1,6 +1,6 @@
-#ifndef MYWINDOW_H
+﻿#ifndef MYWINDOW_H
 #define MYWINDOW_H
-
+#pragma execution_character_set("utf-8")
 #include <QMainWindow>
 
 namespace Ui {
@@ -15,8 +15,10 @@ public:
     explicit MyWindow(QWidget *parent = nullptr);
     ~MyWindow();
 
+    static void setWindow(QMainWindow*);
+
 private:
-    Ui::MyWindow *ui;
+
 };
 
 #endif // MYWINDOW_H

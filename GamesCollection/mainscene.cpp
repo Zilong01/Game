@@ -1,15 +1,20 @@
-#include "mainscene.h"
+﻿#include "mainscene.h"
 #include "ui_mainscene.h"
-
+#include<QAction>
+#include"mywindow.h"
+#include<QPainter>
 MainScene::MainScene(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::MainScene)
+    : MyWindow(parent)
 {
-    ui->setupUi(this);
+
+
 }
 
 MainScene::~MainScene()
 {
-    delete ui;
+
 }
 
+void MainScene::paintEvent(QPaintEvent *e){
+    QPainter painter(this);
+}
