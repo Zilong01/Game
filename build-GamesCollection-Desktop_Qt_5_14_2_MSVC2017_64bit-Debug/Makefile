@@ -260,14 +260,18 @@ Makefile: ..\GamesCollection\GamesCollection.pro ..\..\..\Qt\5.14.2\msvc2017_64\
 		..\..\..\Qt\5.14.2\msvc2017_64\mkspecs\features\yacc.prf \
 		..\..\..\Qt\5.14.2\msvc2017_64\mkspecs\features\lex.prf \
 		..\GamesCollection\GamesCollection.pro \
+		..\..\..\Qt\5.14.2\msvc2017_64\lib\Qt5Multimedia.prl \
 		..\..\..\Qt\5.14.2\msvc2017_64\lib\Qt5Widgets.prl \
 		..\..\..\Qt\5.14.2\msvc2017_64\lib\Qt5Gui.prl \
+		..\..\..\Qt\5.14.2\msvc2017_64\lib\Qt5Network.prl \
 		..\..\..\Qt\5.14.2\msvc2017_64\lib\Qt5Core.prl \
 		..\..\..\Qt\5.14.2\msvc2017_64\lib\qtmain.prl \
 		..\..\..\Qt\5.14.2\msvc2017_64\mkspecs\features\build_pass.prf \
 		..\GamesCollection\res.qrc \
+		..\..\..\Qt\5.14.2\msvc2017_64\lib\Qt5Multimediad.prl \
 		..\..\..\Qt\5.14.2\msvc2017_64\lib\Qt5Widgetsd.prl \
 		..\..\..\Qt\5.14.2\msvc2017_64\lib\Qt5Guid.prl \
+		..\..\..\Qt\5.14.2\msvc2017_64\lib\Qt5Networkd.prl \
 		..\..\..\Qt\5.14.2\msvc2017_64\lib\Qt5Cored.prl \
 		..\..\..\Qt\5.14.2\msvc2017_64\lib\qtmaind.prl
 	$(QMAKE) -o Makefile ..\GamesCollection\GamesCollection.pro -spec win32-msvc "CONFIG+=debug" "CONFIG+=qml_debug"
@@ -447,14 +451,18 @@ Makefile: ..\GamesCollection\GamesCollection.pro ..\..\..\Qt\5.14.2\msvc2017_64\
 ..\..\..\Qt\5.14.2\msvc2017_64\mkspecs\features\yacc.prf:
 ..\..\..\Qt\5.14.2\msvc2017_64\mkspecs\features\lex.prf:
 ..\GamesCollection\GamesCollection.pro:
+..\..\..\Qt\5.14.2\msvc2017_64\lib\Qt5Multimedia.prl:
 ..\..\..\Qt\5.14.2\msvc2017_64\lib\Qt5Widgets.prl:
 ..\..\..\Qt\5.14.2\msvc2017_64\lib\Qt5Gui.prl:
+..\..\..\Qt\5.14.2\msvc2017_64\lib\Qt5Network.prl:
 ..\..\..\Qt\5.14.2\msvc2017_64\lib\Qt5Core.prl:
 ..\..\..\Qt\5.14.2\msvc2017_64\lib\qtmain.prl:
 ..\..\..\Qt\5.14.2\msvc2017_64\mkspecs\features\build_pass.prf:
 ..\GamesCollection\res.qrc:
+..\..\..\Qt\5.14.2\msvc2017_64\lib\Qt5Multimediad.prl:
 ..\..\..\Qt\5.14.2\msvc2017_64\lib\Qt5Widgetsd.prl:
 ..\..\..\Qt\5.14.2\msvc2017_64\lib\Qt5Guid.prl:
+..\..\..\Qt\5.14.2\msvc2017_64\lib\Qt5Networkd.prl:
 ..\..\..\Qt\5.14.2\msvc2017_64\lib\Qt5Cored.prl:
 ..\..\..\Qt\5.14.2\msvc2017_64\lib\qtmaind.prl:
 qmake: FORCE

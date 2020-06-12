@@ -2,7 +2,7 @@
 #define MYWINDOW_H
 #pragma execution_character_set("utf-8")
 #include <QMainWindow>
-
+#include<QPaintEvent>
 namespace Ui {
 class MyWindow;
 }
@@ -17,7 +17,14 @@ public:
 
     static void setWindow(QMainWindow*);
 
+    //背景图片
+    void setBackGroundPic(QString);
+    QString getBackGroundPic()const{return backGroundPic;}
+
+    void paintEvent(QPaintEvent *e)override;//我的窗口类 重写 用于绘制背景图片
 private:
+
+    QString backGroundPic;
 
 };
 

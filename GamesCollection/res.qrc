@@ -6,5 +6,8 @@
         <file>picture/beiJing4.jpg</file>
         <file>picture/beiJing5.jpg</file>
         <file>picture/appPix.jpg</file>
+        <file>picture/appPix.png</file>
+        <file>picture/start.png</file>
+        <file>music/Click.wav</file>
     </qresource>
 </RCC>

@@ -2,12 +2,14 @@
 #include<QMenu>
 #include<QAction>
 #include<QMenuBar>
+#include<QPainter>
 MyWindow::MyWindow(QWidget *parent) :
     QMainWindow(parent)
 {
+
     setFixedSize(450,700);//设置窗口固定大小
     //设置应用图片
-    setWindowIcon(QPixmap(":/first/picture/appPix.jpg"));
+    setWindowIcon(QPixmap(":/first/picture/appPix.png"));
     //设置窗口标题
     setWindowTitle(QString("小游戏集合"));
 
@@ -65,5 +67,21 @@ void MyWindow::setWindow(QMainWindow *window){
 
 //    //创建菜单中菜单项
 //    QAction * gameHelpAction = helpMenu->addAction("查看本游戏帮助");
+
+}
+
+void MyWindow::setBackGroundPic(QString backpic)
+{
+    this->backGroundPic=backpic;
+}
+
+void MyWindow::paintEvent(QPaintEvent *e)
+{
+    QPainter painter(this);
+
+    QPixmap pix;
+    pix.load(this->getBackGroundPic());//加载背景图片
+    painter.drawPixmap(0,0,this->width(),this->height(),pix);
+
 
 }
