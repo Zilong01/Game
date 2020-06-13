@@ -19,6 +19,7 @@ public:
 
     //背景图片
     void setBackGroundPic(QString);
+    void resizeWindow(int,int);
     QString getBackGroundPic()const{return backGroundPic;}
 
     void paintEvent(QPaintEvent *e)override;//我的窗口类 重写 用于绘制背景图片

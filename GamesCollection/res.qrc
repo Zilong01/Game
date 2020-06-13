@@ -9,5 +9,8 @@
         <file>picture/appPix.png</file>
         <file>picture/start.png</file>
         <file>music/Click.wav</file>
+        <file>picture/game.png</file>
+        <file>picture/game1.png</file>
+        <file>music/snake.wav</file>
     </qresource>
 </RCC>

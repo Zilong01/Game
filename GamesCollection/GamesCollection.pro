@@ -16,17 +16,23 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    choosegamescene.cpp \
     main.cpp \
     mainscene.cpp \
     mypushbutton.cpp \
-    mywindow.cpp
+    mywindow.cpp \
+    snakescene.cpp
 
 HEADERS += \
+    choosegamescene.h \
     mainscene.h \
     mypushbutton.h \
-    mywindow.h
+    mywindow.h \
+    snakescene.h
 
-FORMS +=
+FORMS += \
+    choosegamescene.ui \
+    snakescene.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

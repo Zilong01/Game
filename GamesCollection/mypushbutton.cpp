@@ -2,6 +2,7 @@
 #include"QDebug"
 #include<QString>
 #include<QPropertyAnimation>
+#include<QSound>
 MyPushButton::MyPushButton(QString firstImg,QString secondImg){
     Img1=firstImg,Img2=secondImg;
     QPixmap pix1,pix2;
@@ -38,4 +39,16 @@ void MyPushButton::btnShow()
     animation2->setStartValue(QRect(this->x(),this->y()+10,this->width(),this->height()));
     animation2->setEndValue(QRect(this->x(),this->y(),this->width(),this->height()));
     animation2->start();
+}
+
+void MyPushButton::reSizeBtn(int width, int height)
+{
+    this->setFixedSize(width,height);
+    this->setIconSize(QSize(width,height));
+}
+
+void MyPushButton::btnMusic(QString musicFile)
+{
+    QSound *startSound=new QSound(musicFile);
+    startSound->play();
 }
