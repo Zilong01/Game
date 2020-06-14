@@ -59,13 +59,15 @@ ChooseGameScene::ChooseGameScene(QWidget *parent) :
         btn_chooseGame[0]->btnMusic(":/first/music/Click.wav");
         //设置选择游戏场景的初始位置
         btn_chooseGame[0]->setGeometry(this->geometry());
-        QTimer::singleShot(500,this,[=](){
+        QTimer::singleShot(600,this,[=](){
             this->hide();
             gameSnake->show();
         });
 
-        QSound *startSound=new QSound(QString(":/first/music/snake.wav"));
-        startSound->play();
+        QSound *playSound=new QSound(QString(":/first/music/snake.wav"));
+        playSound->setLoops(QSound::Infinite);
+        playSound->play();
+
     });
 
 
@@ -87,8 +89,6 @@ void ChooseGameScene::paintEvent(QPaintEvent *e)
     QPixmap pix2;
     pix2.load(":/first/picture/appPix.png");
     painter.drawPixmap(0,this->height()*0.20,pix2.width()*0.3,pix2.height()*0.3,pix2);
-
-    return QMainWindow::paintEvent(e);
 }
 
 

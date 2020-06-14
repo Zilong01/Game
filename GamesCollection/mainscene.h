@@ -20,5 +20,7 @@ private:
     //重写paintEvent事件
     void paintEvent(QPaintEvent *e)override;
 
+signals:
+    void enterChooseScene();
 };
 #endif // MAINSCENE_H

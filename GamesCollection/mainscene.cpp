@@ -15,6 +15,7 @@ MainScene::MainScene(QWidget *parent)
     //显示应用名称在程序中
     QLabel *appName=new QLabel;
     appName->setParent(this);
+
           //1.设置字体
     QFont font;
     font.setPointSize(40);
@@ -37,6 +38,7 @@ MainScene::MainScene(QWidget *parent)
     btn_start->setParent(this);
     btn_start->move((this->width()-btn_start->width())*0.5,400);
 
+
     //QSound *startSound=new QSound(":/first/music/Click.wav");
     connect(btn_start,&QPushButton::clicked,[=](){
         btn_start->btnShow();//动画
@@ -46,10 +48,14 @@ MainScene::MainScene(QWidget *parent)
         gameScene->setGeometry(this->geometry());
         QTimer::singleShot(500,this,[=](){
             this->hide();
+            emit this->enterChooseScene();
             gameScene->show();
+            //delete this;
         });
 
     });
+
+
 
 }
 
