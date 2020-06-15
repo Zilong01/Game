@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include"mywindow.h"
 #include"mypushbutton.h"
+#include"snakescene.h"
+#include<QSound>
 namespace Ui {
 class ChooseGameScene;
 }
@@ -20,6 +22,8 @@ public:
 
 private:
     Ui::ChooseGameScene *ui;
+    SnakeScene *gameSnake=nullptr;
+    //QSound *playSound=nullptr;
 };
 
 #endif // CHOOSEGAMESCENE_H

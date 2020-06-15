@@ -12,5 +12,7 @@
         <file>picture/game.png</file>
         <file>picture/game1.png</file>
         <file>music/snake.wav</file>
+        <file>music/die.wav</file>
+        <file>music/Ding.wav</file>
     </qresource>
 </RCC>

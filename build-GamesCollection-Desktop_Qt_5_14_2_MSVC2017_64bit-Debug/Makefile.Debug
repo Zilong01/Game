@@ -206,8 +206,10 @@ debug\qrc_res.cpp: ..\GamesCollection\res.qrc \
 		..\GamesCollection\picture\appPix.png \
 		..\GamesCollection\picture\beiJing3.jpg \
 		..\GamesCollection\picture\game1.png \
+		..\GamesCollection\music\die.wav \
 		..\GamesCollection\music\snake.wav \
-		..\GamesCollection\music\Click.wav
+		..\GamesCollection\music\Click.wav \
+		..\GamesCollection\music\Ding.wav
 	D:\Qt\5.14.2\msvc2017_64\bin\rcc.exe -name res ..\GamesCollection\res.qrc -o debug\qrc_res.cpp
 
 compiler_moc_predefs_make_all: debug\moc_predefs.h
@@ -333,6 +335,12 @@ debug\moc_choosegamescene.cpp: ..\GamesCollection\choosegamescene.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\QPushButton \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qpushbutton.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qabstractbutton.h \
+		..\GamesCollection\snakescene.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtGui\QKeyEvent \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtMultimedia\QSound \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtMultimedia\qsound.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtMultimedia\qtmultimediaglobal.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtMultimedia\qtmultimedia-config.h \
 		debug\moc_predefs.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\bin\moc.exe
 	D:\Qt\5.14.2\msvc2017_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include D:/2020_train/Game/build-GamesCollection-Desktop_Qt_5_14_2_MSVC2017_64bit-Debug/debug/moc_predefs.h -ID:/Qt/5.14.2/msvc2017_64/mkspecs/win32-msvc -ID:/2020_train/Game/GamesCollection -ID:/Qt/5.14.2/msvc2017_64/include -ID:/Qt/5.14.2/msvc2017_64/include/QtMultimedia -ID:/Qt/5.14.2/msvc2017_64/include/QtWidgets -ID:/Qt/5.14.2/msvc2017_64/include/QtGui -ID:/Qt/5.14.2/msvc2017_64/include/QtANGLE -ID:/Qt/5.14.2/msvc2017_64/include/QtNetwork -ID:/Qt/5.14.2/msvc2017_64/include/QtCore -I. -I"D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.24.28314\ATLMFC\include" -I"D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.24.28314\include" -I"D:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt" -I"D:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared" -I"D:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um" -I"D:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt" -I"D:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\cppwinrt" ..\GamesCollection\choosegamescene.h -o debug\moc_choosegamescene.cpp
@@ -786,6 +794,11 @@ debug\moc_snakescene.cpp: ..\GamesCollection\snakescene.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qtabwidget.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtGui\qicon.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtGui\QPaintEvent \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtGui\QKeyEvent \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtMultimedia\QSound \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtMultimedia\qsound.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtMultimedia\qtmultimediaglobal.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtMultimedia\qtmultimedia-config.h \
 		debug\moc_predefs.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\bin\moc.exe
 	D:\Qt\5.14.2\msvc2017_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include D:/2020_train/Game/build-GamesCollection-Desktop_Qt_5_14_2_MSVC2017_64bit-Debug/debug/moc_predefs.h -ID:/Qt/5.14.2/msvc2017_64/mkspecs/win32-msvc -ID:/2020_train/Game/GamesCollection -ID:/Qt/5.14.2/msvc2017_64/include -ID:/Qt/5.14.2/msvc2017_64/include/QtMultimedia -ID:/Qt/5.14.2/msvc2017_64/include/QtWidgets -ID:/Qt/5.14.2/msvc2017_64/include/QtGui -ID:/Qt/5.14.2/msvc2017_64/include/QtANGLE -ID:/Qt/5.14.2/msvc2017_64/include/QtNetwork -ID:/Qt/5.14.2/msvc2017_64/include/QtCore -I. -I"D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.24.28314\ATLMFC\include" -I"D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.24.28314\include" -I"D:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt" -I"D:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared" -I"D:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um" -I"D:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt" -I"D:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\cppwinrt" ..\GamesCollection\snakescene.h -o debug\moc_snakescene.cpp
@@ -931,6 +944,12 @@ debug\choosegamescene.obj: ..\GamesCollection\choosegamescene.cpp ..\GamesCollec
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\QPushButton \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qpushbutton.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qabstractbutton.h \
+		..\GamesCollection\snakescene.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtGui\QKeyEvent \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtMultimedia\QSound \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtMultimedia\qsound.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtMultimedia\qtmultimediaglobal.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtMultimedia\qtmultimedia-config.h \
 		ui_choosegamescene.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtCore\QVariant \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\QAction \
@@ -958,14 +977,9 @@ debug\choosegamescene.obj: ..\GamesCollection\choosegamescene.cpp ..\GamesCollec
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\QLabel \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qlabel.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qframe.h \
-		..\GamesCollection\snakescene.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtCore\QTimer \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtCore\qtimer.h \
-		..\..\..\Qt\5.14.2\msvc2017_64\include\QtCore\qbasictimer.h \
-		..\..\..\Qt\5.14.2\msvc2017_64\include\QtMultimedia\QSound \
-		..\..\..\Qt\5.14.2\msvc2017_64\include\QtMultimedia\qsound.h \
-		..\..\..\Qt\5.14.2\msvc2017_64\include\QtMultimedia\qtmultimediaglobal.h \
-		..\..\..\Qt\5.14.2\msvc2017_64\include\QtMultimedia\qtmultimedia-config.h
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtCore\qbasictimer.h
 
 debug\main.obj: ..\GamesCollection\main.cpp ..\GamesCollection\mainscene.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\QMainWindow \
@@ -1215,6 +1229,8 @@ debug\mainscene.obj: ..\GamesCollection\mainscene.cpp ..\GamesCollection\mainsce
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtMultimedia\qtmultimediaglobal.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtMultimedia\qtmultimedia-config.h \
 		..\GamesCollection\choosegamescene.h \
+		..\GamesCollection\snakescene.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtGui\QKeyEvent \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtCore\QTimer \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtCore\qtimer.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtCore\qbasictimer.h
@@ -1461,7 +1477,10 @@ debug\mywindow.obj: ..\GamesCollection\mywindow.cpp ..\GamesCollection\mywindow.
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtGui\qpen.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\QLabel \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qlabel.h \
-		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qframe.h
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qframe.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\QMessageBox \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qmessagebox.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qdialog.h
 
 debug\snakescene.obj: ..\GamesCollection\snakescene.cpp ..\GamesCollection\snakescene.h \
 		..\GamesCollection\mywindow.h \
@@ -1573,6 +1592,11 @@ debug\snakescene.obj: ..\GamesCollection\snakescene.cpp ..\GamesCollection\snake
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qtabwidget.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtGui\qicon.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtGui\QPaintEvent \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtGui\QKeyEvent \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtMultimedia\QSound \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtMultimedia\qsound.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtMultimedia\qtmultimediaglobal.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtMultimedia\qtmultimedia-config.h \
 		ui_snakescene.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtCore\QVariant \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\QApplication \
@@ -1589,7 +1613,21 @@ debug\snakescene.obj: ..\GamesCollection\snakescene.cpp ..\GamesCollection\snake
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qactiongroup.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\QStatusBar \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qstatusbar.h \
-		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\QWidget
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\QWidget \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtGui\QPainter \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtGui\qpainter.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtGui\qtextoption.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtGui\qpen.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtCore\QTimer \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtCore\qtimer.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtCore\qbasictimer.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtCore\QDebug \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\QMessageBox \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qmessagebox.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qdialog.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\QLabel \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qlabel.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qframe.h
 
 debug\qrc_res.obj: debug\qrc_res.cpp 
 

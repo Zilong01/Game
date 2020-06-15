@@ -3,7 +3,6 @@
 #include<QPainter>
 #include<QDebug>
 #include<QLabel>
-#include"snakescene.h"
 #include<QTimer>
 #include<QSound>
 ChooseGameScene::ChooseGameScene(QWidget *parent) :
@@ -54,21 +53,34 @@ ChooseGameScene::ChooseGameScene(QWidget *parent) :
     }
 
     connect(btn_chooseGame[0],&QPushButton::clicked,[=](){
-        SnakeScene *gameSnake=new SnakeScene(this);
+        gameSnake=new SnakeScene(this);
         btn_chooseGame[0]->btnShow();//动画
         btn_chooseGame[0]->btnMusic(":/first/music/Click.wav");
-        //设置选择游戏场景的初始位置
-        btn_chooseGame[0]->setGeometry(this->geometry());
-        QTimer::singleShot(600,this,[=](){
+        //设置游戏场景的初始位置
+        gameSnake->setGeometry(this->geometry());
+       // QTimer::singleShot(600,this,[=](){
             this->hide();
             gameSnake->show();
+
+        //});
+        //背景音乐->改在了场景中 方便控制
+//        playSound=new QSound(QString(":/first/music/snake.wav"));
+//        playSound->setLoops(QSound::Infinite);
+//        playSound->play();
+        //监听返回选择游戏界面的信号
+        connect(gameSnake,&SnakeScene::backChooseScene,[=](){
+            //playSound->stop();
+            //playSound->deleteLater();
+            this->setGeometry(gameSnake->geometry());
+            //gameSnake->close();
+    //////delete崩溃 应改用deleteLater() 在所有事件处理好之后再清除内存
+            //delete gameSnake;
+            gameSnake->deleteLater();
+            gameSnake=nullptr;
+            this->show();
         });
-
-        QSound *playSound=new QSound(QString(":/first/music/snake.wav"));
-        playSound->setLoops(QSound::Infinite);
-        playSound->play();
-
     });
+
 
 
 

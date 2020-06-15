@@ -4,6 +4,7 @@
 #include<QMenuBar>
 #include<QPainter>
 #include<QLabel>
+#include<QMessageBox>
 MyWindow::MyWindow(QWidget *parent) :
     QMainWindow(parent)
 {
@@ -34,6 +35,9 @@ MyWindow::MyWindow(QWidget *parent) :
     //创建菜单中菜单项
     QAction * gameHelpAction = helpMenu->addAction("查看本游戏帮助");
 
+    connect(gameHelpAction,&QAction::triggered,[=](){
+        helpInfo();
+    });
 }
 
 MyWindow::~MyWindow()
@@ -81,3 +85,18 @@ void MyWindow::paintEvent(QPaintEvent *e)
     painter.drawPixmap(0,0,this->width(),this->height(),pix);
 
 }
+
+void MyWindow::setHelpContent(QString title, QString content, QString choose1, QString choose2)
+{
+    helpTitle=title;
+    helpContent=content;
+    helpChoose1=choose1;
+    helpChoose2=choose2;
+}
+
+void MyWindow::helpInfo()
+{
+    QMessageBox::information(this,helpTitle,helpContent,helpChoose1,helpChoose2);
+}
+
+
