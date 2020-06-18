@@ -8,11 +8,11 @@
 #include<QLabel>
 SnakeScene::SnakeScene(QWidget *parent) :
     MyWindow(parent)//,
-    //ui(new Ui::SnakeScene)
+  //ui(new Ui::SnakeScene)
 {
     //ui->setupUi(this);
 
- ////////////////////////界面初始化//////////////////////////////
+    ////////////////////////界面初始化//////////////////////////////
     setBackGroundPic(QString(":/first/picture/beiJing3.jpg"));
     setTittle();
 
@@ -79,7 +79,7 @@ SnakeScene::SnakeScene(QWidget *parent) :
     });
 
 
- //////////////////////////////背景音乐//////////////////////////////
+    //////////////////////////////背景音乐//////////////////////////////
     playSound=new QSound(QString(":/first/music/snake.wav"));
     playSound->setLoops(QSound::Infinite);
     playSound->setParent(this);
@@ -91,28 +91,28 @@ SnakeScene::SnakeScene(QWidget *parent) :
     eatSound=new QSound(QString(":/first/music/Ding.wav"));
     eatSound->setParent(this);
 
-//////////////////////////初始化相关信息////////////////////
-  //初始化蛇身
+    //////////////////////////初始化相关信息////////////////////
+    //初始化蛇身
     snake.push_back({345,375});
     snake.push_back({snake[0].x,snake[0].y+unit});
     snake.push_back({snake[1].x,snake[1].y+unit});
-  //初始化食物
+    //初始化食物
     newFood();
 
 
 
-//////////////////////////蛇的移动/////////////////////////
-  //计数器 实现延迟
-   timerMove=new QTimer(this);
-   connect(timerMove,&QTimer::timeout,[=](){
-       if(gameRun&&!gameOver){
+    //////////////////////////蛇的移动/////////////////////////
+    //计数器 实现延迟
+    timerMove=new QTimer(this);
+    connect(timerMove,&QTimer::timeout,[=](){
+        if(gameRun&&!gameOver){
             move();
             isEatFood();
             allowPress=true;
-       }
+        }
 
-   });
-   timerMove->start(delay);
+    });
+    timerMove->start(delay);
 
 
 }
@@ -142,49 +142,49 @@ void SnakeScene::keyPressEvent(QKeyEvent *e)
 {
 
 
-        switch (e->key()) {
-        case Qt::Key_W:
-        case Qt::Key_Up:
-            if(moveDirection==DOWN||allowPress == false)
-                return;
-            else {moveDirection=UP;
+    switch (e->key()) {
+    case Qt::Key_W:
+    case Qt::Key_Up:
+        if(moveDirection==DOWN||allowPress == false)
+            return;
+        else {moveDirection=UP;
             allowPress=false;}
-            break;
+        break;
 
-        case Qt::Key_A:
-        case Qt::Key_Left:
-            if(moveDirection==RIGHT||allowPress == false)
-                return;
-            else {moveDirection=LEFT;
+    case Qt::Key_A:
+    case Qt::Key_Left:
+        if(moveDirection==RIGHT||allowPress == false)
+            return;
+        else {moveDirection=LEFT;
             allowPress=false;}
-            break;
+        break;
 
-        case Qt::Key_S:
-        case Qt::Key_Down:
-            if(moveDirection==UP||allowPress == false)
-                return;
-            else {moveDirection=DOWN;
+    case Qt::Key_S:
+    case Qt::Key_Down:
+        if(moveDirection==UP||allowPress == false)
+            return;
+        else {moveDirection=DOWN;
             allowPress=false;}
-            break;
+        break;
 
-        case Qt::Key_D:
-        case Qt::Key_Right:
-            if(moveDirection==LEFT||allowPress == false)
-                return;
-            else {moveDirection=RIGHT;
+    case Qt::Key_D:
+    case Qt::Key_Right:
+        if(moveDirection==LEFT||allowPress == false)
+            return;
+        else {moveDirection=RIGHT;
             allowPress=false;}
-            break;
+        break;
 
-        case Qt::Key_Space:
-            gameRun=!gameRun;//游戏运行状态取非->实现暂停
-            if(playSound->isFinished())
-                playSound->play();
-            else playSound->stop();
-            allowPress=false;
-            break;
-        default:
-            break;
-        }
+    case Qt::Key_Space:
+        gameRun=!gameRun;//游戏运行状态取非->实现暂停
+        if(playSound->isFinished())
+            playSound->play();
+        else playSound->stop();
+        allowPress=false;
+        break;
+    default:
+        break;
+    }
 }
 
 bool SnakeScene::checkFood() const
@@ -241,17 +241,17 @@ void SnakeScene::died(QString reason)
     }
     if(choice==0){
         qDebug()<<"重新开始";
-          playSound->play();
-          snake.clear();//清除蛇信息
-          setTittle();//重设标题信息（难度+积分）
-          moveDirection=UP;//重置移动方向
+        playSound->play();
+        snake.clear();//清除蛇信息
+        setTittle();//重设标题信息（难度+积分）
+        moveDirection=UP;//重置移动方向
         //初始化蛇身
-          snake.push_back({345,375});
-          snake.push_back({snake[0].x,snake[0].y+unit});
-          snake.push_back({snake[1].x,snake[1].y+unit});
+        snake.push_back({345,375});
+        snake.push_back({snake[0].x,snake[0].y+unit});
+        snake.push_back({snake[1].x,snake[1].y+unit});
         //初始化食物
-          newFood();
-          timerMove->start(delay);
+        newFood();
+        timerMove->start(delay);
     }
 
     if(choice==1){//返回选择游戏界面
@@ -274,7 +274,7 @@ bool SnakeScene::isEatFood()
         newFood();
         eatSound->play();
 
-       //更改标题 （增加长度信息）
+        //更改标题 （增加长度信息）
         setTittle();
         return true;
     }

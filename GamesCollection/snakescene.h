@@ -7,7 +7,7 @@
 #include<QKeyEvent>
 #include<QSound>
 using namespace std;
-struct Point{int x,y;};
+//struct Point{int x,y;};
 
 namespace Ui {
 class SnakeScene;

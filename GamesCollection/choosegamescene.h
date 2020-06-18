@@ -6,6 +6,7 @@
 #include"mypushbutton.h"
 #include"snakescene.h"
 #include<QSound>
+#include"tetrisscene.h"
 namespace Ui {
 class ChooseGameScene;
 }
@@ -21,8 +22,9 @@ public:
     void paintEvent(QPaintEvent* e)override;
 
 private:
-    Ui::ChooseGameScene *ui;
+    //Ui::ChooseGameScene *ui;
     SnakeScene *gameSnake=nullptr;
+    TetrisScene *gameTetris=nullptr;
     //QSound *playSound=nullptr;
 };
 

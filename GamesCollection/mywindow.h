@@ -6,7 +6,7 @@
 namespace Ui {
 class MyWindow;
 }
-
+struct Point{int x;int y;};
 class MyWindow : public QMainWindow
 {
     Q_OBJECT

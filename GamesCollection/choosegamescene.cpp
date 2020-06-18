@@ -6,13 +6,13 @@
 #include<QTimer>
 #include<QSound>
 ChooseGameScene::ChooseGameScene(QWidget *parent) :
-    MyWindow(parent),
-    ui(new Ui::ChooseGameScene)
+    MyWindow(parent)//,
+   // ui(new Ui::ChooseGameScene)
 {
 
     setBackGroundPic(":/first/picture/beiJing3.jpg");
-    ui->setupUi(this);
-    connect(ui->quitAction,&QAction::triggered,[=](){close();});
+    //ui->setupUi(this);
+    //connect(ui->quitAction,&QAction::triggered,[=](){close();});
     MyWindow::setWindow(this);
 
     this->setWindowTitle(QString("选择你要玩的游戏"));
@@ -63,10 +63,9 @@ ChooseGameScene::ChooseGameScene(QWidget *parent) :
             gameSnake->show();
 
         //});
+
         //背景音乐->改在了场景中 方便控制
-//        playSound=new QSound(QString(":/first/music/snake.wav"));
-//        playSound->setLoops(QSound::Infinite);
-//        playSound->play();
+
         //监听返回选择游戏界面的信号
         connect(gameSnake,&SnakeScene::backChooseScene,[=](){
             //playSound->stop();
@@ -81,6 +80,27 @@ ChooseGameScene::ChooseGameScene(QWidget *parent) :
         });
     });
 
+    //俄罗斯方块
+    connect(btn_chooseGame[1],&QPushButton::clicked,[=](){
+        gameTetris=new TetrisScene(this);
+        btn_chooseGame[1]->btnShow();//动画
+        btn_chooseGame[1]->btnMusic(":/first/music/Click.wav");
+        //设置游戏场景的初始位置
+        gameTetris->setGeometry(this->geometry());
+       // QTimer::singleShot(600,this,[=](){
+            this->hide();
+            gameTetris->show();
+        //});
+
+        //监听返回选择游戏界面的信号
+        connect(gameTetris,&TetrisScene::backChooseScene,[=](){
+           this->setGeometry(gameTetris->geometry());
+           gameTetris->deleteLater();
+            gameTetris=nullptr;
+            this->show();
+            qDebug()<<"连接";
+        });
+    });
 
 
 
@@ -89,7 +109,7 @@ ChooseGameScene::ChooseGameScene(QWidget *parent) :
 
 ChooseGameScene::~ChooseGameScene()
 {
-    delete ui;
+    //delete ui;
 }
 
 void ChooseGameScene::paintEvent(QPaintEvent *e)

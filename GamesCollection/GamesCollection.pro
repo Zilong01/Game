@@ -21,14 +21,18 @@ SOURCES += \
     mainscene.cpp \
     mypushbutton.cpp \
     mywindow.cpp \
-    snakescene.cpp
+    snakescene.cpp \
+    tetrislogic.cpp \
+    tetrisscene.cpp
 
 HEADERS += \
     choosegamescene.h \
     mainscene.h \
     mypushbutton.h \
     mywindow.h \
-    snakescene.h
+    snakescene.h \
+    tetrislogic.h \
+    tetrisscene.h
 
 FORMS += \
     choosegamescene.ui \
