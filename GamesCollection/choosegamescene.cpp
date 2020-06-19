@@ -22,7 +22,7 @@ ChooseGameScene::ChooseGameScene(QWidget *parent) :
             //通过修改num值增加游戏项目
     const int num=3;
     MyPushButton * btn_chooseGame[num];
-    QString name[num]={"贪吃蛇","俄罗斯方块","还没想好"};
+    QString name[num]={"贪吃蛇","俄罗斯方块","扫雷"};
     QLabel *gameName[num];
     for(int i=0;i<num;i++){ //创建按钮的边框图片   并以QLabel形式 在其上显示游戏名称
         btn_chooseGame[i]=new MyPushButton(":/first/picture/game1.png");
@@ -98,11 +98,31 @@ ChooseGameScene::ChooseGameScene(QWidget *parent) :
            gameTetris->deleteLater();
             gameTetris=nullptr;
             this->show();
-            qDebug()<<"连接";
         });
     });
 
 
+
+    //扫雷
+    connect(btn_chooseGame[2],&QPushButton::clicked,[=](){
+        gameMines=new MinesSweeperScene(this);
+        btn_chooseGame[2]->btnShow();//动画
+        btn_chooseGame[2]->btnMusic(":/first/music/Click.wav");
+        //设置游戏场景的初始位置
+        gameMines->setGeometry(this->geometry());
+       // QTimer::singleShot(600,this,[=](){
+            this->hide();
+            gameMines->show();
+        //});
+
+        //监听返回选择游戏界面的信号
+        connect(gameMines,&MinesSweeperScene::backChooseScene,[=](){
+           this->setGeometry(gameTetris->geometry());
+           gameMines->deleteLater();
+            gameMines=nullptr;
+            this->show();
+        });
+    });
 
 
 }

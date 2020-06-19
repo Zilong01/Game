@@ -19,6 +19,10 @@ SOURCES += \
     choosegamescene.cpp \
     main.cpp \
     mainscene.cpp \
+    minesblock.cpp \
+    minesinfobar.cpp \
+    minessweeperlogic.cpp \
+    minessweeperscene.cpp \
     mypushbutton.cpp \
     mywindow.cpp \
     snakescene.cpp \
@@ -28,6 +32,10 @@ SOURCES += \
 HEADERS += \
     choosegamescene.h \
     mainscene.h \
+    minesblock.h \
+    minesinfobar.h \
+    minessweeperlogic.h \
+    minessweeperscene.h \
     mypushbutton.h \
     mywindow.h \
     snakescene.h \

@@ -7,7 +7,7 @@ class MyPushButton : public QPushButton
 {
     Q_OBJECT
 public:
-   MyPushButton(QString firstImg,QString secondImg="");
+    MyPushButton(QString firstImg,QString secondImg="");
     void btnShow();//点击按钮的动画
     void reSizeBtn(int,int);//重新设置按钮的大小
     void btnMusic(QString);

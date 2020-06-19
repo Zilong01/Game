@@ -7,6 +7,7 @@
 #include"snakescene.h"
 #include<QSound>
 #include"tetrisscene.h"
+#include"minessweeperscene.h"
 namespace Ui {
 class ChooseGameScene;
 }
@@ -25,6 +26,7 @@ private:
     //Ui::ChooseGameScene *ui;
     SnakeScene *gameSnake=nullptr;
     TetrisScene *gameTetris=nullptr;
+    MinesSweeperScene *gameMines=nullptr;
     //QSound *playSound=nullptr;
 };
 
