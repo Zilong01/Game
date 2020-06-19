@@ -7,17 +7,17 @@
 int TetrisScene::unit=35;
 int TetrisScene::xNum=TetrisLogic::xNum;
 int TetrisScene::yNum=TetrisLogic::yNum;
-TetrisScene::TetrisScene(QWidget *parent) : MyWindow(parent)
+TetrisScene::TetrisScene(QWidget *parent) : QMainWindow(parent)
 {
     ////////////////////////界面初始化//////////////////////////////
-    setBackGroundPic(QString(":/first/picture/beiJing3.jpg"));
+    //setBackGroundPic(QString(":/first/picture/beiJing3.jpg"));
 
     //在paintEvent中调整了页面的显示位置 故加上菜单栏的高度
     this->setFixedSize(unit*xNum,unit*yNum+23);
 
     this->setWindowTitle("小游戏集合：俄罗斯方块");
     //设置帮助信息 该函数继承自mywindow类
-    setHelpContent("帮助", "俄罗斯方块帮助","YES","CANCEL");
+    //setHelpContent("帮助", "俄罗斯方块帮助","YES","CANCEL");
 
     //初始化逻辑计算指针
     gameTetrisLogic=new TetrisLogic;
@@ -199,7 +199,7 @@ void TetrisScene::changeDifficulty(TetrisLogic::Difficulty diff)
 void TetrisScene::paintEvent (QPaintEvent *e)
 {
     //调用基类paintEvent画背景
-    MyWindow::paintEvent(e);
+    //MyWindow::paintEvent(e);
 
     QPainter p(this);
     //p.setViewport(this->rect());

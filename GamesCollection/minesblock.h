@@ -3,6 +3,9 @@
 
 #include"mywindow.h"
 #include <QLabel>
+#include <QMouseEvent>
+#include <QEnterEvent>
+#include <QEvent>
 #define MINESUNIT 30
 
 //本类继承QLabel 来构造地雷块
@@ -16,14 +19,19 @@ public:
     bool isShow;//是否被点开
     bool isFlag;//被插旗子
 
-    int number;//存储的数字
+    //int number;//存储的数字
     Point pos;
 
-    void showBlock(Point p);//递归翻开周围
+    //void showBlock(Point p);//递归翻开周围
+    void setPix(QString pix);
 
+    virtual void mousePressEvent(QMouseEvent *e)override;
+    virtual void enterEvent(QEvent *e)override;
+    virtual void leaveEvent(QEvent *e)override;
 
 signals:
-
+    void leftClick();
+    void rightClick();
 };
 
 #endif // MINESBLOCK_H

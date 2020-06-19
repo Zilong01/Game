@@ -14,7 +14,7 @@ using namespace std;
 
 
 
-class TetrisScene : public MyWindow
+class TetrisScene : public QMainWindow
 {
     Q_OBJECT
 public:

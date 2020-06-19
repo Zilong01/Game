@@ -53,7 +53,7 @@ ChooseGameScene::ChooseGameScene(QWidget *parent) :
     }
 
     connect(btn_chooseGame[0],&QPushButton::clicked,[=](){
-        gameSnake=new SnakeScene(this);
+        gameSnake=new SnakeScene(/*this*/);
         btn_chooseGame[0]->btnShow();//动画
         btn_chooseGame[0]->btnMusic(":/first/music/Click.wav");
         //设置游戏场景的初始位置
@@ -82,7 +82,7 @@ ChooseGameScene::ChooseGameScene(QWidget *parent) :
 
     //俄罗斯方块
     connect(btn_chooseGame[1],&QPushButton::clicked,[=](){
-        gameTetris=new TetrisScene(this);
+        gameTetris=new TetrisScene(/*this*/);
         btn_chooseGame[1]->btnShow();//动画
         btn_chooseGame[1]->btnMusic(":/first/music/Click.wav");
         //设置游戏场景的初始位置
@@ -105,7 +105,7 @@ ChooseGameScene::ChooseGameScene(QWidget *parent) :
 
     //扫雷
     connect(btn_chooseGame[2],&QPushButton::clicked,[=](){
-        gameMines=new MinesSweeperScene(this);
+        gameMines=new MinesSweeperScene(/*this*/);////////////////this删去就有图标
         btn_chooseGame[2]->btnShow();//动画
         btn_chooseGame[2]->btnMusic(":/first/music/Click.wav");
         //设置游戏场景的初始位置
@@ -117,7 +117,7 @@ ChooseGameScene::ChooseGameScene(QWidget *parent) :
 
         //监听返回选择游戏界面的信号
         connect(gameMines,&MinesSweeperScene::backChooseScene,[=](){
-           this->setGeometry(gameTetris->geometry());
+           this->setGeometry(gameMines->geometry());
            gameMines->deleteLater();
             gameMines=nullptr;
             this->show();

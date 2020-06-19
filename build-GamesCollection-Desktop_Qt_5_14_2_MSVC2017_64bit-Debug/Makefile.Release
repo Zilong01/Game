@@ -249,12 +249,13 @@ release\qrc_res.cpp: ..\GamesCollection\res.qrc \
 		..\GamesCollection\picture\mines\scr6.png \
 		..\GamesCollection\picture\mines\scr7.png \
 		..\GamesCollection\picture\mines\scr8.png \
-		..\GamesCollection\picture\mines\flag.gif \
+		..\GamesCollection\picture\mines\flag.png \
 		..\GamesCollection\picture\mines\scr9.png \
 		..\GamesCollection\picture\mines\face_fail.png \
 		..\GamesCollection\picture\mines\face_success.png \
-		..\GamesCollection\picture\mines\blank.gif \
+		..\GamesCollection\picture\mines\blank.png \
 		..\GamesCollection\picture\mines\question.png \
+		..\GamesCollection\picture\mines\minew.png \
 		..\GamesCollection\picture\mines\0.png \
 		..\GamesCollection\picture\mines\1.png \
 		..\GamesCollection\picture\mines\2.png \
@@ -263,9 +264,8 @@ release\qrc_res.cpp: ..\GamesCollection\res.qrc \
 		..\GamesCollection\picture\mines\5.png \
 		..\GamesCollection\picture\mines\6.png \
 		..\GamesCollection\picture\mines\7.png \
-		..\GamesCollection\picture\mines\8.png \
 		..\GamesCollection\picture\mines\mine.png \
-		..\GamesCollection\picture\mines\mine.gif \
+		..\GamesCollection\picture\mines\8.png \
 		..\GamesCollection\picture\mines\scr0.png \
 		..\GamesCollection\picture\mines\scr1.png \
 		..\GamesCollection\music\die.wav \
@@ -409,6 +409,14 @@ release\moc_choosegamescene.cpp: ..\GamesCollection\choosegamescene.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtCore\qbasictimer.h \
 		..\GamesCollection\tetrislogic.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtCore\QDebug \
+		..\GamesCollection\minessweeperscene.h \
+		..\GamesCollection\minesinfobar.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\QWidget \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\QLabel \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qlabel.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qframe.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtCore\QTime \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtCore\qdatetime.h \
 		release\moc_predefs.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\bin\moc.exe
 	D:\Qt\5.14.2\msvc2017_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include D:/2020_train/Game/build-GamesCollection-Desktop_Qt_5_14_2_MSVC2017_64bit-Debug/release/moc_predefs.h -ID:/Qt/5.14.2/msvc2017_64/mkspecs/win32-msvc -ID:/2020_train/Game/GamesCollection -ID:/Qt/5.14.2/msvc2017_64/include -ID:/Qt/5.14.2/msvc2017_64/include/QtMultimedia -ID:/Qt/5.14.2/msvc2017_64/include/QtWidgets -ID:/Qt/5.14.2/msvc2017_64/include/QtGui -ID:/Qt/5.14.2/msvc2017_64/include/QtANGLE -ID:/Qt/5.14.2/msvc2017_64/include/QtNetwork -ID:/Qt/5.14.2/msvc2017_64/include/QtCore -I. -I"D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.24.28314\ATLMFC\include" -I"D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.24.28314\include" -I"D:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt" -I"D:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared" -I"D:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um" -I"D:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt" -I"D:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\cppwinrt" ..\GamesCollection\choosegamescene.h -o release\moc_choosegamescene.cpp
@@ -528,8 +536,9 @@ release\moc_mainscene.cpp: ..\GamesCollection\mainscene.h \
 	D:\Qt\5.14.2\msvc2017_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include D:/2020_train/Game/build-GamesCollection-Desktop_Qt_5_14_2_MSVC2017_64bit-Debug/release/moc_predefs.h -ID:/Qt/5.14.2/msvc2017_64/mkspecs/win32-msvc -ID:/2020_train/Game/GamesCollection -ID:/Qt/5.14.2/msvc2017_64/include -ID:/Qt/5.14.2/msvc2017_64/include/QtMultimedia -ID:/Qt/5.14.2/msvc2017_64/include/QtWidgets -ID:/Qt/5.14.2/msvc2017_64/include/QtGui -ID:/Qt/5.14.2/msvc2017_64/include/QtANGLE -ID:/Qt/5.14.2/msvc2017_64/include/QtNetwork -ID:/Qt/5.14.2/msvc2017_64/include/QtCore -I. -I"D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.24.28314\ATLMFC\include" -I"D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.24.28314\include" -I"D:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt" -I"D:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared" -I"D:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um" -I"D:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt" -I"D:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\cppwinrt" ..\GamesCollection\mainscene.h -o release\moc_mainscene.cpp
 
 release\moc_minesblock.cpp: ..\GamesCollection\minesblock.h \
-		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\QLabel \
-		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qlabel.h \
+		..\GamesCollection\mywindow.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\QMainWindow \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qmainwindow.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qtwidgetsglobal.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtGui\qtguiglobal.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtCore\qglobal.h \
@@ -555,7 +564,6 @@ release\moc_minesblock.cpp: ..\GamesCollection\minesblock.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtCore\qversiontagging.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtGui\qtgui-config.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qtwidgets-config.h \
-		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qframe.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qwidget.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtGui\qwindowdefs.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtCore\qobjectdefs.h \
@@ -634,6 +642,12 @@ release\moc_minesblock.cpp: ..\GamesCollection\minesblock.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtCore\qfiledevice.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtGui\qvector2d.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtGui\qtouchdevice.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qtabwidget.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtGui\qicon.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtGui\QPaintEvent \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\QLabel \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qlabel.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qframe.h \
 		release\moc_predefs.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\bin\moc.exe
 	D:\Qt\5.14.2\msvc2017_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include D:/2020_train/Game/build-GamesCollection-Desktop_Qt_5_14_2_MSVC2017_64bit-Debug/release/moc_predefs.h -ID:/Qt/5.14.2/msvc2017_64/mkspecs/win32-msvc -ID:/2020_train/Game/GamesCollection -ID:/Qt/5.14.2/msvc2017_64/include -ID:/Qt/5.14.2/msvc2017_64/include/QtMultimedia -ID:/Qt/5.14.2/msvc2017_64/include/QtWidgets -ID:/Qt/5.14.2/msvc2017_64/include/QtGui -ID:/Qt/5.14.2/msvc2017_64/include/QtANGLE -ID:/Qt/5.14.2/msvc2017_64/include/QtNetwork -ID:/Qt/5.14.2/msvc2017_64/include/QtCore -I. -I"D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.24.28314\ATLMFC\include" -I"D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.24.28314\include" -I"D:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt" -I"D:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared" -I"D:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um" -I"D:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt" -I"D:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\cppwinrt" ..\GamesCollection\minesblock.h -o release\moc_minesblock.cpp
@@ -750,11 +764,9 @@ release\moc_minesinfobar.cpp: ..\GamesCollection\minesinfobar.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qpushbutton.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qabstractbutton.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtGui\qicon.h \
-		..\..\..\Qt\5.14.2\msvc2017_64\include\QtCore\QTimer \
-		..\..\..\Qt\5.14.2\msvc2017_64\include\QtCore\qtimer.h \
-		..\..\..\Qt\5.14.2\msvc2017_64\include\QtCore\qbasictimer.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtCore\QTime \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtCore\qdatetime.h \
+		..\GamesCollection\mypushbutton.h \
 		release\moc_predefs.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\bin\moc.exe
 	D:\Qt\5.14.2\msvc2017_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include D:/2020_train/Game/build-GamesCollection-Desktop_Qt_5_14_2_MSVC2017_64bit-Debug/release/moc_predefs.h -ID:/Qt/5.14.2/msvc2017_64/mkspecs/win32-msvc -ID:/2020_train/Game/GamesCollection -ID:/Qt/5.14.2/msvc2017_64/include -ID:/Qt/5.14.2/msvc2017_64/include/QtMultimedia -ID:/Qt/5.14.2/msvc2017_64/include/QtWidgets -ID:/Qt/5.14.2/msvc2017_64/include/QtGui -ID:/Qt/5.14.2/msvc2017_64/include/QtANGLE -ID:/Qt/5.14.2/msvc2017_64/include/QtNetwork -ID:/Qt/5.14.2/msvc2017_64/include/QtCore -I. -I"D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.24.28314\ATLMFC\include" -I"D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.24.28314\include" -I"D:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt" -I"D:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared" -I"D:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um" -I"D:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt" -I"D:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\cppwinrt" ..\GamesCollection\minesinfobar.h -o release\moc_minesinfobar.cpp
@@ -865,6 +877,16 @@ release\moc_minessweeperlogic.cpp: ..\GamesCollection\minessweeperlogic.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtCore\qfiledevice.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtGui\qvector2d.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtGui\qtouchdevice.h \
+		..\GamesCollection\minesblock.h \
+		..\GamesCollection\mywindow.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\QMainWindow \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qmainwindow.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qtabwidget.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtGui\qicon.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtGui\QPaintEvent \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\QLabel \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qlabel.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qframe.h \
 		release\moc_predefs.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\bin\moc.exe
 	D:\Qt\5.14.2\msvc2017_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include D:/2020_train/Game/build-GamesCollection-Desktop_Qt_5_14_2_MSVC2017_64bit-Debug/release/moc_predefs.h -ID:/Qt/5.14.2/msvc2017_64/mkspecs/win32-msvc -ID:/2020_train/Game/GamesCollection -ID:/Qt/5.14.2/msvc2017_64/include -ID:/Qt/5.14.2/msvc2017_64/include/QtMultimedia -ID:/Qt/5.14.2/msvc2017_64/include/QtWidgets -ID:/Qt/5.14.2/msvc2017_64/include/QtGui -ID:/Qt/5.14.2/msvc2017_64/include/QtANGLE -ID:/Qt/5.14.2/msvc2017_64/include/QtNetwork -ID:/Qt/5.14.2/msvc2017_64/include/QtCore -I. -I"D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.24.28314\ATLMFC\include" -I"D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.24.28314\include" -I"D:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt" -I"D:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared" -I"D:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um" -I"D:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt" -I"D:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\cppwinrt" ..\GamesCollection\minessweeperlogic.h -o release\moc_minessweeperlogic.cpp
@@ -977,6 +999,19 @@ release\moc_minessweeperscene.cpp: ..\GamesCollection\minessweeperscene.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtGui\qtouchdevice.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qtabwidget.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtGui\qicon.h \
+		..\GamesCollection\mywindow.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtGui\QPaintEvent \
+		..\GamesCollection\minesinfobar.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\QWidget \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\QLabel \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qlabel.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qframe.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\QPushButton \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qpushbutton.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qabstractbutton.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtCore\QTime \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtCore\qdatetime.h \
+		..\GamesCollection\mypushbutton.h \
 		release\moc_predefs.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\bin\moc.exe
 	D:\Qt\5.14.2\msvc2017_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include D:/2020_train/Game/build-GamesCollection-Desktop_Qt_5_14_2_MSVC2017_64bit-Debug/release/moc_predefs.h -ID:/Qt/5.14.2/msvc2017_64/mkspecs/win32-msvc -ID:/2020_train/Game/GamesCollection -ID:/Qt/5.14.2/msvc2017_64/include -ID:/Qt/5.14.2/msvc2017_64/include/QtMultimedia -ID:/Qt/5.14.2/msvc2017_64/include/QtWidgets -ID:/Qt/5.14.2/msvc2017_64/include/QtGui -ID:/Qt/5.14.2/msvc2017_64/include/QtANGLE -ID:/Qt/5.14.2/msvc2017_64/include/QtNetwork -ID:/Qt/5.14.2/msvc2017_64/include/QtCore -I. -I"D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.24.28314\ATLMFC\include" -I"D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.24.28314\include" -I"D:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt" -I"D:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared" -I"D:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um" -I"D:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt" -I"D:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\cppwinrt" ..\GamesCollection\minessweeperscene.h -o release\moc_minessweeperscene.cpp
@@ -1602,6 +1637,14 @@ release\choosegamescene.obj: ..\GamesCollection\choosegamescene.cpp ..\GamesColl
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtCore\qbasictimer.h \
 		..\GamesCollection\tetrislogic.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtCore\QDebug \
+		..\GamesCollection\minessweeperscene.h \
+		..\GamesCollection\minesinfobar.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\QWidget \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\QLabel \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qlabel.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qframe.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtCore\QTime \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtCore\qdatetime.h \
 		ui_choosegamescene.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtCore\QVariant \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\QAction \
@@ -1620,14 +1663,10 @@ release\choosegamescene.obj: ..\GamesCollection\choosegamescene.cpp ..\GamesColl
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qmenubar.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\QStatusBar \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qstatusbar.h \
-		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\QWidget \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtGui\QPainter \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtGui\qpainter.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtGui\qtextoption.h \
-		..\..\..\Qt\5.14.2\msvc2017_64\include\QtGui\qpen.h \
-		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\QLabel \
-		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qlabel.h \
-		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qframe.h
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtGui\qpen.h
 
 release\main.obj: ..\GamesCollection\main.cpp ..\GamesCollection\mainscene.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\QMainWindow \
@@ -1883,11 +1922,17 @@ release\mainscene.obj: ..\GamesCollection\mainscene.cpp ..\GamesCollection\mains
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtCore\QTimer \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtCore\qtimer.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtCore\qbasictimer.h \
-		..\GamesCollection\tetrislogic.h
+		..\GamesCollection\tetrislogic.h \
+		..\GamesCollection\minessweeperscene.h \
+		..\GamesCollection\minesinfobar.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\QWidget \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtCore\QTime \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtCore\qdatetime.h
 
 release\minesblock.obj: ..\GamesCollection\minesblock.cpp ..\GamesCollection\minesblock.h \
-		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\QLabel \
-		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qlabel.h \
+		..\GamesCollection\mywindow.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\QMainWindow \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qmainwindow.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qtwidgetsglobal.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtGui\qtguiglobal.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtCore\qglobal.h \
@@ -1913,7 +1958,6 @@ release\minesblock.obj: ..\GamesCollection\minesblock.cpp ..\GamesCollection\min
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtCore\qversiontagging.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtGui\qtgui-config.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qtwidgets-config.h \
-		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qframe.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qwidget.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtGui\qwindowdefs.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtCore\qobjectdefs.h \
@@ -1991,7 +2035,13 @@ release\minesblock.obj: ..\GamesCollection\minesblock.cpp ..\GamesCollection\min
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtCore\qfile.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtCore\qfiledevice.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtGui\qvector2d.h \
-		..\..\..\Qt\5.14.2\msvc2017_64\include\QtGui\qtouchdevice.h
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtGui\qtouchdevice.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qtabwidget.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtGui\qicon.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtGui\QPaintEvent \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\QLabel \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qlabel.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qframe.h
 
 release\minesinfobar.obj: ..\GamesCollection\minesinfobar.cpp ..\GamesCollection\minesinfobar.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\QWidget \
@@ -2105,11 +2155,14 @@ release\minesinfobar.obj: ..\GamesCollection\minesinfobar.cpp ..\GamesCollection
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qpushbutton.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qabstractbutton.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtGui\qicon.h \
-		..\..\..\Qt\5.14.2\msvc2017_64\include\QtCore\QTimer \
-		..\..\..\Qt\5.14.2\msvc2017_64\include\QtCore\qtimer.h \
-		..\..\..\Qt\5.14.2\msvc2017_64\include\QtCore\qbasictimer.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtCore\QTime \
-		..\..\..\Qt\5.14.2\msvc2017_64\include\QtCore\qdatetime.h
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtCore\qdatetime.h \
+		..\GamesCollection\mypushbutton.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\QHBoxLayout \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qboxlayout.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qlayout.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qlayoutitem.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qgridlayout.h
 
 release\minessweeperlogic.obj: ..\GamesCollection\minessweeperlogic.cpp ..\GamesCollection\minessweeperlogic.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtCore\QObject \
@@ -2216,7 +2269,17 @@ release\minessweeperlogic.obj: ..\GamesCollection\minessweeperlogic.cpp ..\Games
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtCore\qfile.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtCore\qfiledevice.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtGui\qvector2d.h \
-		..\..\..\Qt\5.14.2\msvc2017_64\include\QtGui\qtouchdevice.h
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtGui\qtouchdevice.h \
+		..\GamesCollection\minesblock.h \
+		..\GamesCollection\mywindow.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\QMainWindow \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qmainwindow.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qtabwidget.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtGui\qicon.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtGui\QPaintEvent \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\QLabel \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qlabel.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qframe.h
 
 release\minessweeperscene.obj: ..\GamesCollection\minessweeperscene.cpp ..\GamesCollection\minessweeperscene.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\QMainWindow \
@@ -2325,7 +2388,29 @@ release\minessweeperscene.obj: ..\GamesCollection\minessweeperscene.cpp ..\Games
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtGui\qvector2d.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtGui\qtouchdevice.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qtabwidget.h \
-		..\..\..\Qt\5.14.2\msvc2017_64\include\QtGui\qicon.h
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtGui\qicon.h \
+		..\GamesCollection\mywindow.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtGui\QPaintEvent \
+		..\GamesCollection\minesinfobar.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\QWidget \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\QLabel \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qlabel.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qframe.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\QPushButton \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qpushbutton.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qabstractbutton.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtCore\QTime \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtCore\qdatetime.h \
+		..\GamesCollection\mypushbutton.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\QMenu \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qmenu.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qaction.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qactiongroup.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\QMenuBar \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\qmenubar.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtCore\QTimer \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtCore\qtimer.h \
+		..\..\..\Qt\5.14.2\msvc2017_64\include\QtCore\qbasictimer.h
 
 release\mypushbutton.obj: ..\GamesCollection\mypushbutton.cpp ..\GamesCollection\mypushbutton.h \
 		..\..\..\Qt\5.14.2\msvc2017_64\include\QtWidgets\QPushButton \

@@ -87,7 +87,7 @@ void TetrisLogic::newBlock(){
             TetrisLogic::changeTimes=15;
         else if(TetrisLogic::difficulty==TetrisLogic::DIFFICULT)
             TetrisLogic::changeTimes=5;
-        else if(TetrisLogic::difficulty==TetrisLogic::NORMAL){
+        else if(TetrisLogic::difficulty==TetrisLogic::EPIC){
             TetrisLogic::changeTimes=4;
         }
 

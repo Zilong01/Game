@@ -1,14 +1,14 @@
 ﻿#include "minessweeperscene.h"
 #include<QMenu>
 #include<QMenuBar>
-MinesSweeperScene::MinesSweeperScene(QWidget *parent) : MyWindow(parent)
+#include<QTimer>
+MinesSweeperScene::MinesSweeperScene(QWidget *parent) : QMainWindow(parent)
 {
-    setBackGroundPic(QString(":/first/picture/beiJing3.jpg"));
 
-    this->setFixedSize(705,450);
+   this->setFixedSize(MINESUNIT*9,23+NUMHEIGHT+MINESUNIT*9);
 
     //设置帮助信息 该函数继承自mywindow类
-    setHelpContent("帮助","扫雷","YES","CANCEL");
+    //setHelpContent("帮助","扫雷","YES","CANCEL");
 
 
     //提示信息
@@ -57,6 +57,8 @@ MinesSweeperScene::MinesSweeperScene(QWidget *parent) : MyWindow(parent)
 //    eatSound->setParent(this);
 
 
+
+    /////////////////////////初始化两个模块指针
     infoBar=new MinesInfoBar(this);
     //设置与当前窗口大小一致
     infoBar->resize(this->width(),infoBar->height());
@@ -64,4 +66,20 @@ MinesSweeperScene::MinesSweeperScene(QWidget *parent) : MyWindow(parent)
     infoBar->reset();
     infoBar->show();
 
+
+
+    ////逻辑处理
+    /// 此处先选择默认难度
+    minesLoigc=new MinesSweeperLogic(PRIMARYROWANDCOL,PRIMARYROWANDCOL,PRIMARYMINES,this);
+    minesLoigc->setParent(this);//让控件在本窗口内显示->不加这个就无延迟
+    minesLoigc->resize(this->width(),this->height()-23-infoBar->height());
+    minesLoigc->move(0,23+infoBar->height());
+
+    //生成新地图
+    minesLoigc->newMap();
+    minesLoigc->show();
+
+
+    //监听logic中的信号
+    //connect(minesLoigc,&MinesSweeperLogic::)
 }

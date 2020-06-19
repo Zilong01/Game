@@ -44,15 +44,17 @@ void MinesInfoBar::reset()
         screen1[i]->move(NUMWIDTH*i,0);
         screen2[i]->move(NUMWIDTH*i,0);
     }
-
+    screen[0]->resize(NUMWIDTH*3,NUMHEIGHT);
+    screen[1]->resize(NUMWIDTH*3,NUMHEIGHT);
     //两个数字显示器放到对称位置
-    screen[0]->move(100,0);
-    screen[1]->move(this->width()-100-screen[1]->width(),0);
+    screen[0]->move(10,0);
+    screen[1]->move(-10+this->width()-screen[1]->width(),0);
 
     //放置表情到中央
     face=new MyPushButton(":/first/picture/mines/face_normal.png");
     face->setParent(this);
-    face->reSizeBtn(NUMHEIGHT,NUMHEIGHT);//放大笑脸
+    face->reSizeBtn(NUMHEIGHT,NUMHEIGHT);//放大笑脸(btn)
+    resetFace(0);//放大笑脸的图片
     face->move((this->width()-face->width())*0.5,(this->height()-face->height())*0.5);
 
 
@@ -72,4 +74,23 @@ void MinesInfoBar::changeScreen(QLabel **screen, int &num)
     }
 }
 
+void MinesInfoBar::resetFace(int state){
+    QPixmap pixmap;
+    if(state==0){//默认微笑
+        pixmap=QString(":/first/picture/mines/face_normal.png");
+    }
+    else if(state==1){//胜利
+        pixmap=QString(":/first/picture/mines/face_success.png");
+    }
+    else if(state==2){//失败
+        pixmap=QString(":/first/picture/mines/face_fail.png");
+    }
+    QPixmap facePix = pixmap.scaled(NUMHEIGHT,NUMHEIGHT, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
+    face->setIcon(facePix);
 
+}
+
+void MinesInfoBar::infoBarResize(int width, int height)
+{
+    this->resize(width,height);
+}

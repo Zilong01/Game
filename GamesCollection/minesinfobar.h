@@ -4,13 +4,13 @@
 #define NUMWIDTH 20
 #define NUMHEIGHT 30
 
-
 #include <QWidget>
 #include<QLabel>
 #include<QPushButton>
-#include<QTimer>
+
 #include<QTime>
 #include"mypushbutton.h"
+
 
 
 //本类用于显示游戏场景中的时间等信息
@@ -33,8 +33,9 @@ public:
 
     void reset();
     void changeScreen(QLabel** screen, int &num);
+    void resetFace(int state);
 
-
+    void infoBarResize(int width,int height);
 
 signals:
 

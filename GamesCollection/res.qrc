@@ -23,14 +23,11 @@
         <file>picture/mines/6.png</file>
         <file>picture/mines/7.png</file>
         <file>picture/mines/8.png</file>
-        <file>picture/mines/blank.gif</file>
         <file>picture/mines/boom.png</file>
         <file>picture/mines/clear.png</file>
         <file>picture/mines/face_fail.png</file>
         <file>picture/mines/face_normal.png</file>
         <file>picture/mines/face_success.png</file>
-        <file>picture/mines/flag.gif</file>
-        <file>picture/mines/mine.gif</file>
         <file>picture/mines/mine.png</file>
         <file>picture/mines/question.png</file>
         <file>picture/mines/scr0.png</file>
@@ -43,5 +40,8 @@
         <file>picture/mines/scr7.png</file>
         <file>picture/mines/scr8.png</file>
         <file>picture/mines/scr9.png</file>
+        <file>picture/mines/blank.png</file>
+        <file>picture/mines/flag.png</file>
+        <file>picture/mines/minew.png</file>
     </qresource>
 </RCC>
