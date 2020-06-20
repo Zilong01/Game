@@ -1,5 +1,6 @@
 ﻿#include "minesinfobar.h"
 #include<QHBoxLayout>
+#include<QDebug>
 MinesInfoBar::MinesInfoBar(QWidget *parent) : QWidget(parent)
 {
 
@@ -23,6 +24,7 @@ MinesInfoBar::MinesInfoBar(QWidget *parent) : QWidget(parent)
 
 void MinesInfoBar::reset()
 {
+
     //重置屏幕信息
     QImage Image;
     Image.load(":/first/picture/mines/scr0.png");
@@ -51,7 +53,9 @@ void MinesInfoBar::reset()
     screen[1]->move(-10+this->width()-screen[1]->width(),0);
 
     //放置表情到中央
+    //face->move((this->width()-face->width())*0.5,(this->height()-face->height())*0.5);
     face=new MyPushButton(":/first/picture/mines/face_normal.png");
+    face->move((this->width()-face->width())*0.5,(this->height()-face->height())*0.5);
     face->setParent(this);
     face->reSizeBtn(NUMHEIGHT,NUMHEIGHT);//放大笑脸(btn)
     resetFace(0);//放大笑脸的图片
@@ -74,6 +78,31 @@ void MinesInfoBar::changeScreen(QLabel **screen, int &num)
     }
 }
 
+void MinesInfoBar::changeScreen(int whichScreen, int num)
+{
+    if(whichScreen!=2&&whichScreen!=1){
+        qDebug()<<"没有屏幕"<<whichScreen;
+        return;
+    }
+    if(num>999){
+        return;//屏幕最大显示999
+    }
+    int copy=num;
+    //读取传入的三个数字
+    for(int i=2;i>=0;i--){
+        QString digit= QString(":/first/picture/mines/scr%1.png").arg(copy%10);
+        if(whichScreen==1){
+            QPixmap digitScl = QPixmap(digit).scaled(screen1[i]->width(), screen1[i]->height(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
+            screen1[i]->setPixmap(digitScl);
+        }
+        else if(whichScreen==2){
+            QPixmap digitScl = QPixmap(digit).scaled(screen2[i]->width(), screen2[i]->height(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
+            screen2[i]->setPixmap(digitScl);
+        }
+        copy/=10;
+    }
+}
+
 void MinesInfoBar::resetFace(int state){
     QPixmap pixmap;
     if(state==0){//默认微笑
@@ -87,7 +116,6 @@ void MinesInfoBar::resetFace(int state){
     }
     QPixmap facePix = pixmap.scaled(NUMHEIGHT,NUMHEIGHT, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
     face->setIcon(facePix);
-
 }
 
 void MinesInfoBar::infoBarResize(int width, int height)

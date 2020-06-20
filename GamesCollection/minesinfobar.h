@@ -27,12 +27,12 @@ public:
     QLabel* screen2[3]={nullptr};//右
     MyPushButton * face=nullptr;//中央的表情
 
-    QTimer *timer=nullptr;//计时器
-    QTime time;//时间
+
     int runningTime;//保存游戏运行是时间
 
     void reset();
     void changeScreen(QLabel** screen, int &num);
+    void changeScreen(int whichScreen,int num);
     void resetFace(int state);
 
     void infoBarResize(int width,int height);

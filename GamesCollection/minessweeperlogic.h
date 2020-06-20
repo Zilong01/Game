@@ -16,14 +16,24 @@ public:
 
     void showBlock(Point p);
     bool firstClick=true;
+    int getNumOfMines()const{return numOfMines;}
+    int getNumOfFlags()const{return numOfFlag;}
+    void resetMapSize(int row_,int col_,int numOfMines_);
 signals:
     void gameOver();
     void gameWin();
+    void firstClickSignal();
+    void flagChangeSignal();
 
 private:
     int row;
     int col;
     int numOfMines;
+    int numOfFlag=0;
+
+    void changeFlag(int x,int y);
+    void checkWin();
+
 
 };
 

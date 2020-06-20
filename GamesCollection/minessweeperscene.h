@@ -10,7 +10,7 @@
 #define PRIMARYROWANDCOL 9
 #define MIDDLEROWANDCOL 16
 #define SENIORROW 16
-#define SENIOCOL 30
+#define SENIORCOL 30
 #define PRIMARYMINES 10
 #define MIDDLEMINES 40
 #define SENIORMINES 99
@@ -26,6 +26,14 @@ public:
     MinesInfoBar* infoBar=nullptr;
     MinesSweeperLogic* minesLoigc=nullptr;
 
+    QTimer *timer=nullptr;//计时器
+    int time=0;//存储时间
+
+
+private:
+   int SCol=PRIMARYROWANDCOL;
+   int SRow=PRIMARYROWANDCOL;
+   int SMines=PRIMARYMINES;
 signals:
     void backChooseScene();
 };

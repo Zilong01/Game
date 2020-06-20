@@ -18,6 +18,8 @@ public:
     bool isMine;//是否为地雷
     bool isShow;//是否被点开
     bool isFlag;//被插旗子
+    bool isQuestion;//？图标
+    bool allowPress;
 
     //int number;//存储的数字
     Point pos;
