@@ -31,6 +31,7 @@ private:
     int numOfMines;
     int numOfFlag=0;
 
+
     void changeFlag(int x,int y);
     void checkWin();
 

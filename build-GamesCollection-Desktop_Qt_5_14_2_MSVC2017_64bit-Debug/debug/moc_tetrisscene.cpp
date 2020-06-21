@@ -86,7 +86,7 @@ void TetrisScene::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
 }
 
 QT_INIT_METAOBJECT const QMetaObject TetrisScene::staticMetaObject = { {
-    QMetaObject::SuperData::link<QMainWindow::staticMetaObject>(),
+    QMetaObject::SuperData::link<MyWindow::staticMetaObject>(),
     qt_meta_stringdata_TetrisScene.data,
     qt_meta_data_TetrisScene,
     qt_static_metacall,
@@ -105,12 +105,12 @@ void *TetrisScene::qt_metacast(const char *_clname)
     if (!_clname) return nullptr;
     if (!strcmp(_clname, qt_meta_stringdata_TetrisScene.stringdata0))
         return static_cast<void*>(this);
-    return QMainWindow::qt_metacast(_clname);
+    return MyWindow::qt_metacast(_clname);
 }
 
 int TetrisScene::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
-    _id = QMainWindow::qt_metacall(_c, _id, _a);
+    _id = MyWindow::qt_metacall(_c, _id, _a);
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {

@@ -4,14 +4,20 @@
 #include<QTimer>
 #include<QMessageBox>
 #include<QDebug>
-MinesSweeperScene::MinesSweeperScene(QWidget *parent) : QMainWindow(parent)
+MinesSweeperScene::MinesSweeperScene(QWidget *parent) : MyWindow(parent)
 {
 
    this->setFixedSize(MINESUNIT*9,23+NUMHEIGHT+MINESUNIT*9);
 
     //设置帮助信息 该函数继承自mywindow类
-    //setHelpContent("帮助","扫雷","YES","CANCEL");
+    setHelpContent("帮助","左键单击：在判断出不是雷的方块上按下左键，可以打开该方块。\n"
+                        "如果方块上出现数字，则该数字表示其周围3×3区域中的地雷数；\n"
+                        "如果方块上为空（相当于0），则可以递归地打开与空相邻的方块；\n"
+                        "如果不幸触雷，则游戏结束。\n"
+                        "右键单击：在判断为地雷的方块上按下右键，可以标记地雷（显示为小红旗）。\n"
+                        "重复两次操作可取消标记。","YES","CANCEL");
 
+    this->setWindowTitle("扫雷");
 
     //提示信息
     QLabel *primaryHelp=new QLabel(this);
@@ -63,8 +69,8 @@ MinesSweeperScene::MinesSweeperScene(QWidget *parent) : QMainWindow(parent)
 //    playSound->setParent(this);
 //    playSound->play();
 
-//    dieSound=new QSound(QString(":/first/music/die.wav"));
-//    dieSound->setParent(this);
+    dieSound=new QSound(QString(":/first/music/boom.wav"));
+    dieSound->setParent(this);
 
 //    eatSound=new QSound(QString(":/first/music/Ding.wav"));
 //    eatSound->setParent(this);
@@ -113,6 +119,9 @@ MinesSweeperScene::MinesSweeperScene(QWidget *parent) : QMainWindow(parent)
 
     //监听logic中的死亡信号
     connect(minesLoigc,&MinesSweeperLogic::gameOver,[=](){
+        dieSound->play();
+        //保存游戏记录
+        record(false);
 
         timer->stop();//计时器停止
         //延迟弹出
@@ -152,6 +161,10 @@ MinesSweeperScene::MinesSweeperScene(QWidget *parent) : QMainWindow(parent)
     connect(minesLoigc,&MinesSweeperLogic::gameWin,[=](){
 
         infoBar->resetFace(1);
+
+        //保存游戏记录
+        record(true);
+
         QTimer *tempTimer=new QTimer(this);
         tempTimer->start(100);
         connect(tempTimer,&QTimer::timeout,[=]{
@@ -183,6 +196,7 @@ MinesSweeperScene::MinesSweeperScene(QWidget *parent) : QMainWindow(parent)
          infoBar->resize(this->width(),infoBar->height());
          infoBar->reset();
 
+
     });
     connect(middleAction,&QAction::triggered,[=](){
          SRow=SCol=MIDDLEROWANDCOL;
@@ -194,7 +208,10 @@ MinesSweeperScene::MinesSweeperScene(QWidget *parent) : QMainWindow(parent)
          minesLoigc->resize(this->width(),this->height()-23-infoBar->height());
          infoBar->resize(this->width(),infoBar->height());
          infoBar->reset();
+         infoBar->changeScreen(1,SMines);
+         infoBar->face->move((this->width()-infoBar->face->width())*0.5,0);
     });
+
     connect(seniorAction,&QAction::triggered,[=](){
          SRow=SENIORROW;
          SCol=SENIORCOL;
@@ -205,8 +222,72 @@ MinesSweeperScene::MinesSweeperScene(QWidget *parent) : QMainWindow(parent)
          minesLoigc->resize(this->width(),this->height()-23-infoBar->height());
          infoBar->resize(this->width(),infoBar->height());
          infoBar->reset();
+         infoBar->changeScreen(1,SMines);
+         infoBar->face->move((this->width()-infoBar->face->width())*0.5,0);
+    });
+
+    //////////////////////////用户自定义难度
+    connect(customizeAction,&QAction::triggered,[=](){
+        qDebug()<<"检测到";
+        diffScene=new MinesDiffSet(this);
+        diffScene->show();
+
+        connect(diffScene,&MinesDiffSet::setCol,this,[=](int col__){
+            SCol=col__;
+            //qDebug()<<"连接成功"<<SCol;
+        });
+
+        connect(diffScene,&MinesDiffSet::setRow,this,[=](int row__){
+            SRow=row__;
+            //qDebug()<<"连接成功"<<SRow;
+        });
+
+        connect(diffScene,&MinesDiffSet::setMines,this,[=](int mines__){
+            SMines=mines__;
+            //qDebug()<<"连接成功"<<SCol;
+        });
+
+        connect(diffScene->btn_q,&QPushButton::clicked,[=](){
+            qDebug()<<"设置成功"<<SRow<<SCol<<SMines;
+            diffScene->deleteLater();
+            minesLoigc->resetMapSize(SRow,SCol,SMines);
+            minesLoigc->newMap();
+            this->setFixedSize(MINESUNIT*SCol,23+NUMHEIGHT+MINESUNIT*SRow);
+            minesLoigc->resize(this->width(),this->height()-23-infoBar->height());
+            infoBar->resize(this->width(),infoBar->height());
+            infoBar->reset();
+            infoBar->changeScreen(1,SMines);
+        });
+
 
     });
 
 
+
+}
+
+void MinesSweeperScene::record(bool isWin)
+{
+    ///////////////////////保存游戏记录//////////////////////////////////////
+    QFile record1("D:\\2020_train\\Game\\GamesCollection\\minesInformation.txt");
+    if(record1.open(QIODevice::ReadWrite|QIODevice::Text|QIODevice::Append)){
+        QTextStream date(&record1);//数据流对象并与文件关联
+        QDateTime tempTime=QDateTime::currentDateTime();
+        QString currentTime=tempTime.toString("yyyy.MM.dd hh:mm ddd");
+        if(isWin)
+            date<<QString("游戏时间:")<<currentTime<<QString("   行数:")<<SRow<<QString("   列数:")<<SCol<<QString("   雷数:")<<SMines<<"  "<<QString("胜利")<<QString(" 耗时:%1 秒").arg(time)<<endl;
+        else
+            date<<QString("游戏时间:")<<currentTime<<QString("   行数:")<<SRow<<QString("   列数:")<<SCol<<QString("   雷数:")<<SMines<<"  "<<QString("失败")<<QString(" 耗时:%1 秒").arg(time)<<endl;
+            //date<<currentTime<<SRow<<" "<<SCol<<" "<<SMines<<" "<<QString("失败")<<" "<<time<<endl;
+        record1.close();
+    }
+    else qDebug()<<"扫雷记录文件打开失败";
+}
+
+void MinesSweeperScene::infoShow()
+{
+    infoWin=new InfoWindow(this);
+    infoWin->changePage(2);
+    infoWin->show();
+    //qDebug()<<"游戏信息展示";
 }

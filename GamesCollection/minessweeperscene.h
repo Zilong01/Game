@@ -5,8 +5,9 @@
 #include"mywindow.h"
 #include"minesinfobar.h"
 #include"minessweeperlogic.h"
-
-
+#include"minesdiffset.h"
+#include<QSound>
+#include"infowindow.h"
 #define PRIMARYROWANDCOL 9
 #define MIDDLEROWANDCOL 16
 #define SENIORROW 16
@@ -16,7 +17,7 @@
 #define SENIORMINES 99
 
 //扫雷游戏场景
-class MinesSweeperScene : public QMainWindow
+class MinesSweeperScene : public MyWindow
 {
     Q_OBJECT
 public:
@@ -26,9 +27,16 @@ public:
     MinesInfoBar* infoBar=nullptr;
     MinesSweeperLogic* minesLoigc=nullptr;
 
+    MinesDiffSet* diffScene=nullptr;
+    InfoWindow* infoWin=nullptr;
+
     QTimer *timer=nullptr;//计时器
     int time=0;//存储时间
 
+    QSound *dieSound=nullptr;
+    void record(bool isWin);
+
+    virtual void infoShow() override;
 
 private:
    int SCol=PRIMARYROWANDCOL;

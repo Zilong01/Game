@@ -26,6 +26,7 @@ void MinesBlock::mousePressEvent(QMouseEvent *e)
     if(!allowPress)
         return;
     if(e->button()==Qt::LeftButton&&!this->isShow){
+        this->clicking=true;
         emit leftClick();
     }
     else if(e->button()==Qt::RightButton){

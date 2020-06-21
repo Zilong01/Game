@@ -6,6 +6,7 @@
 using namespace std;
 class TetrisLogic
 {
+
 public:
 
     TetrisLogic();
@@ -32,7 +33,7 @@ public:
     static int score;
     static Difficulty difficulty;
     static bool gameOver;
-    static bool lineClear;
+    //static bool lineClear;
 
 private:
 //    int unit=30;//单位长宽 改到界面中
@@ -42,9 +43,9 @@ private:
     int currentShape;//当前方块的形状
     int currentState;//当前方块的状态
 
-signals:
+//signals:
 
-
+//    void lineClear1();
 };
 
 #endif // TETRISLOGIC_H

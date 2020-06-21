@@ -1,14 +1,11 @@
 <RCC>
     <qresource prefix="/first">
-        <file>picture/beijing1.jpg</file>
-        <file>picture/beiJing2.jpg</file>
         <file>picture/beiJing3.jpg</file>
         <file>picture/beiJing4.jpg</file>
         <file>picture/beiJing5.jpg</file>
         <file>picture/appPix.jpg</file>
         <file>picture/appPix.png</file>
         <file>picture/start.png</file>
-        <file>music/Click.wav</file>
         <file>picture/game.png</file>
         <file>picture/game1.png</file>
         <file>music/snake.wav</file>
@@ -43,5 +40,9 @@
         <file>picture/mines/blank.png</file>
         <file>picture/mines/flag.png</file>
         <file>picture/mines/minew.png</file>
+        <file>music/Tetris.wav</file>
+        <file>music/Click.wav</file>
+        <file>music/boom.wav</file>
     </qresource>
+    <qresource prefix="/"/>
 </RCC>

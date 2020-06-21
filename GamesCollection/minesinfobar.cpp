@@ -53,12 +53,11 @@ void MinesInfoBar::reset()
     screen[1]->move(-10+this->width()-screen[1]->width(),0);
 
     //放置表情到中央
-    //face->move((this->width()-face->width())*0.5,(this->height()-face->height())*0.5);
     face=new MyPushButton(":/first/picture/mines/face_normal.png");
-    face->move((this->width()-face->width())*0.5,(this->height()-face->height())*0.5);
     face->setParent(this);
     face->reSizeBtn(NUMHEIGHT,NUMHEIGHT);//放大笑脸(btn)
     resetFace(0);//放大笑脸的图片
+    qDebug()<<"笑脸移动到"<<(this->width()-face->width())*0.5;
     face->move((this->width()-face->width())*0.5,(this->height()-face->height())*0.5);
 
 

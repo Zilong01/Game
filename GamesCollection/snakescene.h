@@ -6,6 +6,7 @@
 #include<QPaintEvent>
 #include<QKeyEvent>
 #include<QSound>
+#include<infowindow.h>
 using namespace std;
 //struct Point{int x,y;};
 
@@ -34,7 +35,7 @@ public:
     bool isEatFood();//是否吃到食物
 
     bool eatSelf();
-
+    static bool closeMusic;
     //virtual void helpInfo(QString title , QString content , QString choose1 , QString choose2 ) override;
 private:
  //   Ui::SnakeScene *ui;
@@ -45,6 +46,8 @@ private:
     int moveDirection=LEFT;//蛇移动方向
     QTimer *timerMove;
 
+    InfoWindow *infoWin=nullptr;//游戏数据
+
     bool gameOver=false;
     bool gameRun=true;//游戏未暂停
     int difficulty=NORMAL;//难度
@@ -52,6 +55,8 @@ private:
     //int length;//蛇长度 直接用vector的size表示长度
 
     int unit=15;//蛇身一个方块的单位长与宽
+
+    int numOfChange=0;
 
     bool allowPress=true;//是否允许按键
 
@@ -65,6 +70,10 @@ private:
     QSound *playSound;
     QSound *dieSound;
     QSound *eatSound;
+
+    void record();
+    void infoShow() override;
+
 
 signals:
     void backChooseScene();

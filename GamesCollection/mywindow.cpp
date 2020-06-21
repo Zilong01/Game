@@ -26,9 +26,18 @@ MyWindow::MyWindow(QWidget *parent) :
     QAction * openAction = startMenu->addAction("打开");
     QAction * saveAction = startMenu->addAction("保存");
     startMenu->addSeparator();
+    QAction * infoAction=startMenu->addAction("查看历史记录");
     QAction * quitAction = startMenu->addAction("关闭游戏");
 
-    connect(quitAction,&QAction::triggered,[=](){close();});
+    connect(infoAction,&QAction::triggered,[=](){
+        //查看游戏信息
+        infoShow();
+    });
+
+    connect(quitAction,&QAction::triggered,[=](){
+        close();
+    });
+
     //创建帮助菜单
     QMenu  * helpMenu=bar->addMenu("帮助");
 
@@ -45,7 +54,7 @@ MyWindow::~MyWindow()
 
 }
 
-//似乎已经没用了 可以删去
+
 void MyWindow::setWindow(QMainWindow *window){
 
     QLabel *appName=new QLabel;

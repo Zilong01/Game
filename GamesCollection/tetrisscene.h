@@ -8,13 +8,14 @@ using namespace std;
 #include<QTimer>
 #include<QKeyEvent>
 #include<QSound>
-#include"tetrislogic.h"
+#include"tetrislogic1.h"
+#include"infowindow.h"
 //struct Point{int x,y;};
 
 
 
 
-class TetrisScene : public QMainWindow
+class TetrisScene : public MyWindow
 {
     Q_OBJECT
 public:
@@ -22,7 +23,7 @@ public:
     explicit TetrisScene(QWidget *parent = nullptr);
 
 
-    void changeDifficulty(TetrisLogic::Difficulty);
+    void changeDifficulty(TetrisLogic1::Difficulty);
     QTimer *tetrisTimer=nullptr;
     void paintEvent(QPaintEvent *e) override;
     void keyPressEvent(QKeyEvent *e)override;
@@ -30,7 +31,7 @@ public:
 private:
     static int unit;//单位长宽
     static int xNum,yNum;//界面上的方格数
-
+    static bool closeMusic;
 
     int delay=300;//刷新延迟
 
@@ -42,7 +43,12 @@ private:
     QSound *dieSound=nullptr;
     QSound *clearSound=nullptr;
 
-    TetrisLogic *gameTetrisLogic=nullptr;
+    TetrisLogic1 *gameTetrisLogic=nullptr;
+    InfoWindow *infoWin=nullptr;
+
+    virtual void infoShow() override;
+    void record();
+
 signals:
     void backChooseScene();
 

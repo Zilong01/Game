@@ -18,6 +18,7 @@ public:
     bool isMine;//是否为地雷
     bool isShow;//是否被点开
     bool isFlag;//被插旗子
+    bool clicking=false;//被点击
     bool isQuestion;//？图标
     bool allowPress;
 

@@ -18,7 +18,7 @@ void MinesSweeperLogic::newMap()
     firstClick=true;
 
     for(int j=0;j<col;j++){
-        qDebug()<<"newmap()中当前col"<<col;
+        qDebug()<<"newmap()中当前col"<<col<<row;
         vector<MinesBlock*> temp;
         for(int i=0;i<row;i++){
             MinesBlock* block=new MinesBlock({j,i},this);
@@ -32,8 +32,10 @@ void MinesSweeperLogic::newMap()
 
             //监听block中的点击信号
             connect(map[j][i],&MinesBlock::leftClick,[=](){
-                if(!map[j][i]->isFlag)
+                if(!map[j][i]->isFlag){
                     showBlock({j,i});//不是旗子
+
+                }
                 //else
                     //是旗子
             });
@@ -66,6 +68,8 @@ void MinesSweeperLogic::newMap()
 
 void MinesSweeperLogic::showBlock(Point p)
 {
+    qDebug()<<col-1<<row-1;
+    //map[29][15];
     if(p.x<0||p.x>col-1||p.y>row-1||p.y<0)
         return;//越界
 
@@ -84,7 +88,7 @@ void MinesSweeperLogic::showBlock(Point p)
 
     firstClick=false;
     //踩雷
-    if(map[p.x][p.y]->isMine){
+    if(map[p.x][p.y]->isMine&&map[p.x][p.y]->clicking){
         //map[p.x][p.y]->setPixmap(QString(":/first/picture/mines/boom.png"));
         map[p.x][p.y]->setPix(QString(":/first/picture/mines/boom.png"));//重设图片及大小
         map[p.x][p.y]->isShow=true;
@@ -111,9 +115,14 @@ void MinesSweeperLogic::showBlock(Point p)
 
 
         emit gameOver();
+        return;
     }
 
+
+
+
     else if(map[p.x][p.y]){
+
         int tempNum=0;
 
         //计算雷数
@@ -121,9 +130,10 @@ void MinesSweeperLogic::showBlock(Point p)
             for(int j=-1;j<2;j++){
                 if(i==0&&j==0)
                     continue;
-                /*if(p.x-i<0||p.y-j<0||p.x+i>=row||p.y+j>=col)*/
-                if(p.x+i<0||p.y+j<0||p.x+i>=row||p.y+j>=col){
+                /*if(p.x-i<0||p.y-j<0||p.x+i>=row||p.y+j>=col)*//////6.20修复
+                if(p.x+i<0||p.y+j<0||p.x+i>=col||p.y+j>=row){///////////////6.21修复
                     //越界
+                    //return;
                     continue;
                 }
                 else if(map[p.x+i][p.y+j]->isMine)
@@ -131,19 +141,19 @@ void MinesSweeperLogic::showBlock(Point p)
             }
         }
 
-
         //周围有雷
         if(tempNum){
             map[p.x][p.y]->setPix(QString(":/first/picture/mines/%1.png").arg(tempNum));
             tempNum=0;
             map[p.x][p.y]->isShow=true;
-            if(map[p.x][p.y]->isFlag)//收回旗帜
+            if(map[p.x][p.y]->isFlag)
             {
-               map[p.x][p.y]->isFlag=false;
+               map[p.x][p.y]->isFlag=false;//收回旗帜
                numOfFlag--;
             }
 
         }
+
         else{
             //没有雷
             map[p.x][p.y]->setPix(QString(":/first/picture/mines/0.png"));
@@ -161,14 +171,18 @@ void MinesSweeperLogic::showBlock(Point p)
                     Point temp;
                     temp.x=p.x+i;temp.y=p.y+j;
 
-                    if(temp.x<0||temp.y<0||temp.x>col-1||temp.y>row-1)
+                    if(temp.x<0||temp.y<0||temp.x>col-1||temp.y>row-1){
+                        qDebug()<<"temp.x"<<temp.x<<temp.y;
                         return;
+                    }
                     else {//不是边界继续递归
                         qDebug()<<"递归"<<temp.x<<temp.y;
+
                         showBlock(temp);
                     }
                 }
             }
+
           return;
         }
     }

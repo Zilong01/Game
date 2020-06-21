@@ -10,7 +10,7 @@ int TetrisLogic::yNum=20;
 int TetrisLogic:: changeTimes=5;
 int TetrisLogic:: score=0;
 bool TetrisLogic::gameOver=false;
-bool TetrisLogic::lineClear=false;
+//bool TetrisLogic::lineClear=false;
 
 TetrisLogic::Difficulty TetrisLogic::difficulty=NORMAL;
 
@@ -80,7 +80,7 @@ void TetrisLogic::newBlock(){
         y=0;
 
         //重置清行判断
-        lineClear=false;
+        //lineClear=false;
 
         //重置可旋转次数
         if(TetrisLogic::difficulty==TetrisLogic::NORMAL)
@@ -190,7 +190,8 @@ void TetrisLogic::clearLine(){
                 map[k].insert(map[k].begin(),0); //增加k列第一（0）行0 ->前后行数不变
             }
             score+=10;//得分增加
-            lineClear=true;
+//            lineClear=true;
+            //emit  lineClear1();
         }
     }
 }

@@ -25,8 +25,10 @@ public:
     void paintEvent(QPaintEvent *e)override;//我的窗口类 重写 用于绘制背景图片
     void setHelpContent(QString title, QString content, QString choose1, QString choose2);
 
+    virtual void infoShow(){;};//默认空语句
+
     virtual void helpInfo();//帮助信息 虚函数 用于点击菜单栏帮助按钮的弹出信息
-    QMenuBar* getMenuBar(){return bar;}
+
 private:
 
     QMenuBar *bar;//菜单栏

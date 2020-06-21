@@ -1,7 +1,7 @@
 QT       += core gui
 QT += multimedia
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
-
+CONFIG += resources_big
 CONFIG += c++11
 
 # The following define makes your compiler emit warnings if you use
@@ -17,33 +17,44 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     choosegamescene.cpp \
+    infowindow.cpp \
     main.cpp \
     mainscene.cpp \
     minesblock.cpp \
+    minesdiffset.cpp \
     minesinfobar.cpp \
     minessweeperlogic.cpp \
     minessweeperscene.cpp \
     mypushbutton.cpp \
     mywindow.cpp \
+    numwidget.cpp \
     snakescene.cpp \
     tetrislogic.cpp \
+    tetrislogic1.cpp \
     tetrisscene.cpp
 
 HEADERS += \
     choosegamescene.h \
+    infowindow.h \
     mainscene.h \
     minesblock.h \
+    minesdiffset.h \
     minesinfobar.h \
     minessweeperlogic.h \
     minessweeperscene.h \
     mypushbutton.h \
     mywindow.h \
+    numwidget.h \
     snakescene.h \
     tetrislogic.h \
+    tetrislogic1.h \
     tetrisscene.h
 
 FORMS += \
     choosegamescene.ui \
+    infowindow.ui \
+    minesdiffset.ui \
+    numwidget.ui \
     snakescene.ui
 
 # Default rules for deployment.
