@@ -1,0 +1,48 @@
+<RCC>
+    <qresource prefix="/first">
+        <file>picture/beiJing3.jpg</file>
+        <file>picture/beiJing4.jpg</file>
+        <file>picture/beiJing5.jpg</file>
+        <file>picture/appPix.jpg</file>
+        <file>picture/appPix.png</file>
+        <file>picture/start.png</file>
+        <file>picture/game.png</file>
+        <file>picture/game1.png</file>
+        <file>music/snake.wav</file>
+        <file>music/die.wav</file>
+        <file>music/Ding.wav</file>
+        <file>picture/mines/0.png</file>
+        <file>picture/mines/1.png</file>
+        <file>picture/mines/2.png</file>
+        <file>picture/mines/3.png</file>
+        <file>picture/mines/4.png</file>
+        <file>picture/mines/5.png</file>
+        <file>picture/mines/6.png</file>
+        <file>picture/mines/7.png</file>
+        <file>picture/mines/8.png</file>
+        <file>picture/mines/boom.png</file>
+        <file>picture/mines/clear.png</file>
+        <file>picture/mines/face_fail.png</file>
+        <file>picture/mines/face_normal.png</file>
+        <file>picture/mines/face_success.png</file>
+        <file>picture/mines/mine.png</file>
+        <file>picture/mines/question.png</file>
+        <file>picture/mines/scr0.png</file>
+        <file>picture/mines/scr1.png</file>
+        <file>picture/mines/scr2.png</file>
+        <file>picture/mines/scr3.png</file>
+        <file>picture/mines/scr4.png</file>
+        <file>picture/mines/scr5.png</file>
+        <file>picture/mines/scr6.png</file>
+        <file>picture/mines/scr7.png</file>
+        <file>picture/mines/scr8.png</file>
+        <file>picture/mines/scr9.png</file>
+        <file>picture/mines/blank.png</file>
+        <file>picture/mines/flag.png</file>
+        <file>picture/mines/minew.png</file>
+        <file>music/Tetris.wav</file>
+        <file>music/Click.wav</file>
+        <file>music/boom.wav</file>
+    </qresource>
+    <qresource prefix="/"/>
+</RCC>
